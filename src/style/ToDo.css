@@ -1,0 +1,30 @@
+.hero{
+    background-color: darkred;
+    color: white;
+    height: 85px;
+    width: 100%;
+    word-spacing: 10%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.main-container{
+    display: flex;
+   
+}
+
+.row{
+    display: flex;
+    padding: 10px;
+}
+
+.item{
+    display: flex;
+    padding: 10px;
+    align-self: self-start;
+
+}
