@@ -1,30 +1,345 @@
-.hero{
-    background-color: darkred;
-    color: white;
-    height: 85px;
-    width: 100%;
-    word-spacing: 10%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    font-weight: bolder;
-    font-size: large;
-    font-family: 'Courier New', Courier, monospace;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+
+    --primary:#2b2b2b;
+    --primary-dark:#1a1a1a;
+
+    --secondary:#444444;
+    --secondary-dark:#2b2b2b;
+
+    --background:#000000;
+    --card:#181818;
+
+    --text:#ffffff;
+    --text-light:#c7c7c7;
+
+    --border:#3a3a3a;
+
+    --shadow:0 15px 35px rgba(0,0,0,.45);
+
+    --radius:20px;
 }
 
-.main-container{
-    display: flex;
-   
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
 }
+
+body{
+
+    background:#000;
+
+    min-height:100vh;
+}
+
+
+
+
+.hero{
+
+    width:100%;
+
+    padding:28px;
+
+    background:#151515;
+
+    color:white;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.4);
+
+    margin-bottom:40px;
+}
+
+
+
+.content{
+
+    width:95%;
+
+    max-width:1500px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+    gap:35px;
+}
+
+
+
+
+.main-container,
+.task-list{
+
+    flex:1;
+
+    background:#181818;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid #2d2d2d;
+
+    height:700px;
+}
+
+
+
+
+.task-list{
+
+    overflow-y:auto;
+}
+
+.task-list h3{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:25px;
+
+    margin-bottom:25px;
+}
+
+
+
+
+.task{
+
+    background:#232323;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    margin-bottom:22px;
+
+    border:1px solid #3b3b3b;
+
+    box-shadow:none;
+
+    transition:.3s;
+}
+
+.task:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#666;
+}
+
+.task h3{
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:12px;
+
+    font-size:25px;
+}
+
+.task p{
+
+    color:#d2d2d2;
+
+    margin-bottom:8px;
+
+    text-align:center;
+
+    word-break:break-word;
+}
+
+
+
 
 .row{
-    display: flex;
-    padding: 10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:25px;
 }
 
-.item{
-    display: flex;
-    padding: 10px;
-    align-self: self-start;
 
+
+
+.item:first-child{
+
+    width:180px;
+}
+
+.item:last-child{
+
+    flex:1;
+}
+
+
+
+
+label{
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+}
+
+
+
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    background:#242424;
+
+    color:white;
+
+    border:1px solid #444;
+
+    border-radius:14px;
+
+    outline:none;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+textarea{
+
+    resize:none;
+
+    min-height:140px;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:#777;
+
+    box-shadow:0 0 12px rgba(255,255,255,.08);
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:#9d9d9d;
+}
+
+
+
+
+button{
+
+    background:white;
+
+    color:black;
+
+    border:none;
+
+    padding:15px 45px;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    background:#d9d9d9;
+
+    transform:translateY(-2px);
+}
+
+
+
+
+.task-list::-webkit-scrollbar{
+
+    width:8px;
+}
+
+.task-list::-webkit-scrollbar-thumb{
+
+    background:#555;
+
+    border-radius:20px;
+}
+
+.task-list::-webkit-scrollbar-track{
+
+    background:#1b1b1b;
+}
+
+
+
+
+@media(max-width:900px){
+
+    .content{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .main-container,
+    .task-list{
+
+        width:100%;
+
+        height:auto;
+    }
+
+    .row{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .item:first-child,
+    .item:last-child{
+
+        width:100%;
+    }
+
+    button{
+
+        width:100%;
+    }
 }
